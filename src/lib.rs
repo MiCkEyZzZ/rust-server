@@ -21,15 +21,16 @@ async fn index(req: HttpRequest) -> Result<web::Json<IndexResponse>> {
     }))
 }
 
-pub struct MessageApp {
+pub struct RustServerApp {
     port: u16,
 }
 
-impl MessageApp {
+impl RustServerApp {
     pub fn new(port: u16) -> Self {
-        MessageApp { port }
+        RustServerApp { port }
     }
 
+    #[actix_web::main]
     pub async fn run(&self) -> std::io::Result<()> {
         println!("Server listening on port {}...", self.port);
         HttpServer::new(move || {
