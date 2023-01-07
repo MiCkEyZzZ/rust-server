@@ -1,8 +1,13 @@
 [package]
 name = "rest-server"
 version = "0.1.0"
-edition = "2021"
+authors = ["Mikhail Zhuravlev <i@mfzhuravlev.ru>"]
+edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix-web = "4.2.1"
+env_logger = "0.10.0"
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.91"
